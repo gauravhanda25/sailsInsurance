@@ -13,8 +13,11 @@ module.exports = {
    * `PlanController.getPlans()`
    */
   getPlans: function (req, res) {
-    return res.json({
-      todo: 'getPlans() is not implemented yet!'
+    Plan.find().exec(function (err, usersNamedFinn){
+      if (err) {
+        return res.serverError(err);
+      }
+      return res.json(usersNamedFinn);
     });
   },
 
@@ -43,8 +46,10 @@ module.exports = {
    * `PlanController.createPlan()`
    */
   createPlan: function (req, res) {
-    return res.json({
-      todo: 'createPlan() is not implemented yet!'
+    Plan.create(req.body).exec(function (err, finn){
+      if (err) { return res.serverError(err); }
+
+      return res.ok();
     });
   }
 };

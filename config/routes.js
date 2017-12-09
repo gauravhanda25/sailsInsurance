@@ -33,7 +33,10 @@ module.exports.routes = {
   ***************************************************************************/
 
   'POST /api/v1/user/register': 'UserController.register',
-  'POST /api/v1/user/login': 'UserController.login'
+  'POST /api/v1/user/login': 'UserController.login',
+
+  'GET /api/v1/plan/getplans': 'PlanController.getPlans',
+  'POST /api/v1/plan/create': 'PlanController.createPlan',
 
   /***************************************************************************
   *                                                                          *

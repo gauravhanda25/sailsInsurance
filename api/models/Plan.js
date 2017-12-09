@@ -8,7 +8,25 @@
 module.exports = {
 
   attributes: {
-
+	type: {
+	    type: 'string',
+	},
+	medicalConditions: {
+		type: 'boolean',
+	},
+	duration: {
+		type: 'integer',
+	},
+	name: {
+		type: 'string',
+		unique : true
+	},
+	price: {
+		type: 'integer',
+	},
+	cover: {
+		type: 'string',
+	}
   }
 };
 
