@@ -40,6 +40,12 @@ module.exports.routes = {
   'POST /api/v1/plan/edit': 'PlanController.editPlan',
   'POST /api/v1/plan/update': 'PlanController.updatePlan',
 
+
+  'GET /api/v1/buyplan/getbuyplans': 'BuyPlanController.getBuyPlans',
+  'POST /api/v1/buyplan/createbuyplan': 'BuyPlanController.createBuyPlan',
+  'POST /api/v1/buyplan/editbuyplan': 'BuyPlanController.editBuyPlan',
+  'POST /api/v1/buyplan/updatebuyplan': 'BuyPlanController.updateBuyPlan',
+
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
