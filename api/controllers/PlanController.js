@@ -39,20 +39,21 @@ module.exports = {
    * `PlanController.updatePlan()`
    */
   updatePlan: function (req, res) {
-    Plan.find({id:req.body.id}).exec(function(error, plan) {
+
+    var ObjectId = require('mongodb').ObjectID;
+    var x = new  ObjectId(req.body.id);
+    console.log(x);
+    Plan.find({name: req.body.name}).exec(function(error, plan) {
     if(error) {
         // do something with the error.
     }
-    console.log(plan, req.body.id);
-    // if(req.body.email) {
-        // validate whether the email address is valid?
-
-        // Then save it to the object.
-        // plan.cover = req.body.cover;
-    // }
+    console.log(plan);
+    if(req.body.name) {
+        plan.name = req.body.name;
+    }
     // Repeat for each eligible attribute, etc.
     if(plan) {
-      Plan.update({id:req.body.id}, req.body).exec(function (err, updated){
+      Plan.update({name: req.body.name}, req.body).exec(function (err, updated){
         if (err) { return res.serverError(err); }
         
         res.json(updated);
