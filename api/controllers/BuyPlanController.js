@@ -38,26 +38,26 @@ module.exports = {
    */
   updateBuyPlan: function (req, res) {
 
-  //   var ObjectId = require('mongodb').ObjectID;
-  //   var x = new  ObjectId(req.body.id);
-  //   console.log(x);
-  //   Plan.find({id: x}).exec(function(error, plan) {
-  //   if(error) {
-  //       // do something with the error.
-  //   }
-  //   console.log(plan);
-  //   if(req.body.name) {
-  //       plan.name = req.body.name;
-  //   }
-  //   // Repeat for each eligible attribute, etc.
-  //   if(plan) {
-  //     Plan.update({name: req.body.name}, req.body).exec(function (err, updated){
-  //       if (err) { return res.serverError(err); }
-        
-  //       res.json(updated);
-  //     });
-  //   }
-  // });
+      var ObjectId = require('mongodb').ObjectID;
+      var x = new  ObjectId(req.body.id);
+      console.log(x);
+      Buyplan.find({id: x}).exec(function(error, plan) {
+      if(error) {
+          // do something with the error.
+      }
+      console.log(plan);
+      if(req.body.name) {
+          plan.name = req.body.name;
+      }
+      // Repeat for each eligible attribute, etc.
+      if(plan) {
+        Buyplan.update({name: req.body.name}, req.body).exec(function (err, updated){
+          if (err) { return res.serverError(err); }
+          
+          res.json(updated);
+        });
+      }
+    });
   },
 
 
