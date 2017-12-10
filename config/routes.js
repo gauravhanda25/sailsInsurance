@@ -37,6 +37,7 @@ module.exports.routes = {
 
   'GET /api/v1/plan/getplans': 'PlanController.getPlans',
   'POST /api/v1/plan/create': 'PlanController.createPlan',
+  'POST /api/v1/plan/edit': 'PlanController.editPlan',
   'POST /api/v1/plan/update': 'PlanController.updatePlan',
 
   /***************************************************************************

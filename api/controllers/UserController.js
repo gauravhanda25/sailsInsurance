@@ -36,12 +36,12 @@ module.exports = {
             return res.serverError(err);
           }
           if(usersNamedFinn.length) {
-            return res.json(usersNamedFinn);
-          } else {
+            return res.json("Email already exists!");
+                      } else {
             User.create(req.body).exec(function (err, finn){
               if (err) { return res.serverError(err); }
 
-              return res.ok();
+              return res.json("success");
             });
           }
         });
